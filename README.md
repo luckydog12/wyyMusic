@@ -31,7 +31,7 @@ window.onresize = function () {
 
 ### 公共模块
 
-<img src="/Users/img/WechatIMG52.jpeg" alt="WechatIMG52" style="zoom:33%;" />
+<img src="http://luckydog314.ltd:8080/pic/home.jpeg" alt="WechatIMG52" style="zoom:33%;" />
 
 > 顶部：左侧个人主页图标，以及点击显示的个人主页
 >
@@ -40,7 +40,7 @@ window.onresize = function () {
 > - 以上属于公共模块，需要配置嵌套路由，***注意父亲组件要记得写router-view***
 > - 同时注意到y轴滚动条不包括顶部和底部，所以内容主体部分要与顶部和底部的公共模块隔离，本人设置公共模块fix定位，同时App.vue中通过margin和calc计算页面主体部分
 > - 效果图如下：（注意右侧滚动条）
-> - <img src="/Users/kap/Kapture 2021-09-16 at 05.58.48.gif" alt="Kapture 2021-09-16 at 05.58.48" style="zoom:50%;" />
+> - <img src="http://luckydog314.ltd:8080/pic/homeDemo.gif" alt="Kapture 2021-09-16 at 05.58.48" style="zoom:50%;" />
 >
 > 
 
