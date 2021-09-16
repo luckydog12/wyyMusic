@@ -31,7 +31,7 @@ window.onresize = function () {
 
 ### 公共模块
 
-<img src="http://luckydog314.ltd:8080/pic/home.jpeg" alt="WechatIMG52" style="max-width: 30%;" />
+<img src="http://luckydog314.ltd:8080/pic/home.jpeg" alt="WechatIMG52" style="width: 30%;" />
 
 > 顶部：左侧个人主页图标，以及点击显示的个人主页
 >
@@ -68,11 +68,11 @@ window.onresize = function () {
 > - 静态底部导航栏搭建好后，通过路由跳转跳转到各个页面，并通过当前路由路径及***v-if***,***v-else-if***控制不同页面的顶部内容：
 >
 > - ```vue
->   	<HomeHead v-if="nowRoutePath === '/home'" />
->     <BokeHead v-else-if="nowRoutePath === '/boke'" />
->     <MyHead v-else-if="nowRoutePath === '/my'" />
->     <FollowHead v-else-if="nowRoutePath === '/follow'" />
->     <YuncunHead v-else-if="nowRoutePath === '/yuncun'" />
+>   <HomeHead v-if="nowRoutePath === '/home'" />
+>   <BokeHead v-else-if="nowRoutePath === '/boke'" />
+>   <MyHead v-else-if="nowRoutePath === '/my'" />
+>   <FollowHead v-else-if="nowRoutePath === '/follow'" />
+>   <YuncunHead v-else-if="nowRoutePath === '/yuncun'" />
 >   ```
 >
 > - 为了便于开发维护，采用组件的方式引入，整体效果图如下：
