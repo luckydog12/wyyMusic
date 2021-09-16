@@ -5,6 +5,7 @@ import store from "./store"
 import Vant from "vant"
 import "vant/lib/index.css"
 import "./assets/css/iconfont.css"
+import "./assets/css/common.css"
 
 createApp(App)
   .use(Vant)

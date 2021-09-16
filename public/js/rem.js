@@ -10,7 +10,7 @@ function remSize() {
   }
   // 个人本地开发习惯使用375*667 此处设置1rem = 50px 后续开发元素单位都使用rem
   document.documentElement.style.fontSize = deviceWidth / 7.5 + "px"
-  document.querySelector("body").style.fontSize = 0.5 + "rem"
+  document.querySelector("body").style.fontSize = 0.3 + "rem" //15px
 }
 
 remSize()

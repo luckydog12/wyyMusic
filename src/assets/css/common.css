@@ -1,0 +1,18 @@
+.flex-row-spaceBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-row-spaceAround {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.flex-col-spaceAround {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
