@@ -1,15 +1,10 @@
 <template>
   <div class="head">
-    <div class="flex-row-spaceBetween main">
-      <div class="headLeft">
-        <div class="iconfont icon-list01"></div>
-      </div>
-      <HomeHead v-if="nowRoutePath === '/home'" />
-      <BokeHead v-else-if="nowRoutePath === '/boke'" />
-      <MyHead v-else-if="nowRoutePath === '/my'" />
-      <FollowHead v-else-if="nowRoutePath === '/follow'" />
-      <YuncunHead v-else-if="nowRoutePath === '/yuncun'" />
-    </div>
+    <HomeHead v-if="nowRoutePath === '/home'" />
+    <BokeHead v-else-if="nowRoutePath === '/boke'" />
+    <MyHead v-else-if="nowRoutePath === '/my'" />
+    <FollowHead v-else-if="nowRoutePath === '/follow'" />
+    <YuncunHead v-else-if="nowRoutePath === '/yuncun'" />
   </div>
   <div class="footer">
     <div class="top1">top</div>
@@ -55,7 +50,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, onUpdated, ref } from "vue"
+import { defineComponent, onMounted, onUpdated, reactive, toRefs } from "vue"
 import { useRoute, useRouter } from "vue-router"
 import HomeHead from "../components/HomeHead.vue"
 import BokeHead from "../components/BokeHead.vue"
@@ -74,15 +69,17 @@ export default defineComponent({
   setup() {
     const route = useRoute()
     const router = useRouter()
-    const nowRoutePath = ref<string>("")
+    const state = reactive({
+      nowRoutePath: "",
+    })
     onMounted(() => {
-      nowRoutePath.value = route.path
+      state.nowRoutePath = route.path
     })
     onUpdated(() => {
-      nowRoutePath.value = route.path
+      state.nowRoutePath = route.path
     })
     return {
-      nowRoutePath,
+      ...toRefs(state),
       router,
     }
   },
@@ -96,15 +93,7 @@ export default defineComponent({
   position: fixed;
   top: 0;
   left: 0;
-  .main {
-    height: 100%;
-    padding: 0 0.2rem;
-  }
-  .headLeft {
-    .iconfont {
-      font-size: 0.5rem;
-    }
-  }
+  z-index: 999;
 }
 .footer {
   width: 7.5rem;
@@ -119,7 +108,7 @@ export default defineComponent({
   }
   .bottomNavigation {
     height: 50%;
-    padding: 0 0.2rem;
+    padding: 0 0.3rem;
     background-color: #fff;
     color: #696969;
     .navigationActive {

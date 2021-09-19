@@ -1,16 +1,17 @@
 <template>
   <div class="home">
-    home
+    <Swiper />
   </div>
-  <router-view></router-view>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue"
-import { useRoute } from "vue-router"
+import { defineComponent } from "vue"
+import Swiper from "../components/Home/Swiper.vue"
 
 export default defineComponent({
-  components: {},
+  components: {
+    Swiper,
+  },
   setup() {},
 })
 </script>
@@ -18,7 +19,5 @@ export default defineComponent({
 <style lang="less" scoped>
 .home {
   width: 7.5rem;
-  height: 20rem;
-  background: #bfa;
 }
 </style>

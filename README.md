@@ -83,9 +83,23 @@ window.onresize = function () {
 
 
 
+### 首页模块
 
+- #### 轮播图
 
-
+  - 由于之前已经使用过swiper组件处理在vue3中的轮播图，（[例子](https://github.com/luckydog12/wwyMusicOld/blob/master/src/components/Home/Swiper.vue)）（可以直接copy使用）。所以此项目使用另一种方法，vant框架中的swipe轮播：
+  - 细节问题：swipe背景颜色以及公共模块主页页面头部要根据轮播图主题颜色变化，处理思路：
+    - 通过colorthief提取图片背景颜色
+    - 存入vuex中
+    - 通过watch监听提取vuex中存放的颜色字段，渲染背景颜色
+  - 遇到的问题及解决方案：
+    - 在ts中，可能vetur会报错cann't found moudule colorthief，在xxx.d.ts中添加declare module 'colorthief'
+    - 通过computed计算属性提取vuex中的值，会由于其返回值为readonly属性，报warning，所以采用watch监听处理
+    - 由于轮播图发生改变时才会更改vuex中的数据，所以以后每次初始化进入页面时，第一张图片的背景色永远都是上一次关闭页面或结束进程时存入的值，所以在初始化进入页面时，首先手动将vuex置为空（因为公共模块顶部是保持watch监听vuex中的数据，渲染公共模块顶部需要等待首页页面模块提取颜色，存入vuex中），之后需要使用***异步***的方式等待图片加载完单独执行一次提取当前第一张图片背景颜色，存入vuex
+    - canvas跨域问题，设置img标签*crossorigin*="anonymous"（pc端测试没问题，真机调试仍然抱canvas的跨域问题，暂时未找到解决方案）
+  - 对应组件路径： src/components/Home/Swiper.vue
+  - 当前效果图如下： 
+  - <img src="http://luckydog314.ltd:8080/pic/homeSwipe.gif" />
 
 
 

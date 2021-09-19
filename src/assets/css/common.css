@@ -10,6 +10,12 @@
   justify-content: space-around;
 }
 
+.flex-row-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .flex-col-spaceAround {
   display: flex;
   flex-direction: column;
