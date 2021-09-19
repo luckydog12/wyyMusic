@@ -97,10 +97,19 @@ window.onresize = function () {
     - 通过computed计算属性提取vuex中的值，会由于其返回值为readonly属性，报warning，所以采用watch监听处理
     - 由于轮播图发生改变时才会更改vuex中的数据，所以以后每次初始化进入页面时，第一张图片的背景色永远都是上一次关闭页面或结束进程时存入的值，所以在初始化进入页面时，首先手动将vuex置为空（因为公共模块顶部是保持watch监听vuex中的数据，渲染公共模块顶部需要等待首页页面模块提取颜色，存入vuex中），之后需要使用***异步***的方式等待图片加载完单独执行一次提取当前第一张图片背景颜色，存入vuex
     - canvas跨域问题，设置img标签*crossorigin*="anonymous"（pc端测试没问题，真机调试仍然抱canvas的跨域问题，暂时未找到解决方案）
+    - 由于顶部与轮播图的背景属于两个模块，为了做到平滑过度，顶部背景图片不设置过度时间，轮播图背景设置1s过度时间，同时设置渐变效果
   - 对应组件路径： src/components/Home/Swiper.vue
   - [点击查看效果图](http://luckydog314.ltd:8080/pic/homeSwipe.gif)： (滚到到最后一张手动刷新页面)
 
+- #### 每日推荐、私人FM等选项
 
+  - 构建静态页面
+  - 细节问题：
+    - 每日推荐图标中心部分是每天的日期，使用new Date().getDate()配合绝对定位即可
+    - 组件是可以x轴滑动的，但是需要在样式上隐藏x轴滚动条，我的处理方式是滚轴宽高设置为0
+    - 调节样式宽度等还是需要一定计算的，此组件路径：src/components/Home/Select.vue，可自行查看
+    - 效果图如下:
+    - <img src="http://luckydog314.ltd:8080/pic/select.gif" />
 
 
 

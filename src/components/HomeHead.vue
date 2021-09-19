@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-row-spaceBetween main" :style="{ background: backgroundColor }" style="transition: all 1s;">
+  <div class="flex-row-spaceBetween main" :style="{ background: backgroundColor }">
     <PublicHeadLeft />
 
     <div class="headCenter flex-row-center">

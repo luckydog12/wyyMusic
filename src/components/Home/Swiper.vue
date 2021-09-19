@@ -1,5 +1,5 @@
 <template>
-  <div class="banners" :style="{ background: colorRgba }">
+  <div class="banners" :style="{ backgroundImage: `linear-gradient(to bottom, ${colorRgba}, rgba(255,255,255,1))` }">
     <van-swipe class="swipe" :autoplay="3000" lazy-render @change="swipeChange">
       <van-swipe-item v-for="item in lists" :key="item.pic">
         <img class="img" :src="item.pic" :id="item.bannerId" alt="404" crossorigin="anonymous" />

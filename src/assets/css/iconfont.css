@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 2815973 */
-  src: url("//at.alicdn.com/t/font_2815973_g4ogb9npqr5.woff2?t=1631736303268") format("woff2"),
-    url("//at.alicdn.com/t/font_2815973_g4ogb9npqr5.woff?t=1631736303268") format("woff"),
-    url("//at.alicdn.com/t/font_2815973_g4ogb9npqr5.ttf?t=1631736303268") format("truetype");
+  src: url("//at.alicdn.com/t/font_2815973_814ho7dhld7.woff2?t=1632068938120") format("woff2"),
+    url("//at.alicdn.com/t/font_2815973_814ho7dhld7.woff?t=1632068938120") format("woff"),
+    url("//at.alicdn.com/t/font_2815973_814ho7dhld7.ttf?t=1632068938120") format("truetype");
 }
 
 .iconfont {
@@ -11,6 +11,58 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-calendar:before {
+  content: "\e6b5";
+}
+
+.icon-rili2:before {
+  content: "\e78a";
+}
+
+.icon-rili1:before {
+  content: "\e60d";
+}
+
+.icon-icon--1:before {
+  content: "\e76a";
+}
+
+.icon-icon--:before {
+  content: "\e77e";
+}
+
+.icon-weibiaoti-:before {
+  content: "\e60b";
+}
+
+.icon-zhuanji:before {
+  content: "\e60a";
+}
+
+.icon-xingxing:before {
+  content: "\e70b";
+}
+
+.icon-airudiantubiaohuizhi-zhuanqu_youxi:before {
+  content: "\e69d";
+}
+
+.icon-paihangbang--:before {
+  content: "\e610";
+}
+
+.icon-yueliang:before {
+  content: "\e764";
+}
+
+.icon-15:before {
+  content: "\e61e";
+}
+
+.icon-rili:before {
+  content: "\e643";
 }
 
 .icon-M:before {
