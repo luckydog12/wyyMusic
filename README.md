@@ -98,7 +98,7 @@ window.onresize = function () {
     - 由于轮播图发生改变时才会更改vuex中的数据，所以以后每次初始化进入页面时，第一张图片的背景色永远都是上一次关闭页面或结束进程时存入的值，所以在初始化进入页面时，首先手动将vuex置为空（因为公共模块顶部是保持watch监听vuex中的数据，渲染公共模块顶部需要等待首页页面模块提取颜色，存入vuex中），之后需要使用***异步***的方式等待图片加载完单独执行一次提取当前第一张图片背景颜色，存入vuex
     - canvas跨域问题，设置img标签*crossorigin*="anonymous"（pc端测试没问题，真机调试仍然抱canvas的跨域问题，暂时未找到解决方案）
   - 对应组件路径： src/components/Home/Swiper.vue
-  - 当前效果图如下： 
+  - 当前效果图如下： (滚到到最后一张手动刷新页面)
   - <img src="http://luckydog314.ltd:8080/pic/homeSwipe.gif" />
 
 
