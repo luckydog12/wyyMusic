@@ -99,7 +99,7 @@ window.onresize = function () {
     - canvas跨域问题，设置img标签*crossorigin*="anonymous"（pc端测试没问题，真机调试仍然抱canvas的跨域问题，暂时未找到解决方案）
   - 对应组件路径： src/components/Home/Swiper.vue
   - 当前效果图如下： (滚到到最后一张手动刷新页面)
-  - <img src="http://luckydog314.ltd:8080/pic/homeSwipe.gif" />
+  - <img src="http://luckydog314.ltd:8080/pic/homeSwipe.gif" style="max-width:100%;" />
 
 
 
