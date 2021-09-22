@@ -6,3 +6,5 @@ declare module '*.vue' {
 }
 
 declare module 'colorthief'
+
+// declare module 'swiper'

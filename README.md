@@ -50,13 +50,13 @@ window.onresize = function () {
 >     align-items: center;
 >     justify-content: space-between;
 >   }
->   
+>     
 >   .flex-row-spaceAround {
 >     display: flex;
 >     align-items: center;
 >     justify-content: space-around;
 >   }
->   
+>     
 >   .flex-col-spaceAround {
 >     display: flex;
 >     flex-direction: column;
@@ -110,6 +110,47 @@ window.onresize = function () {
     - 调节样式宽度等还是需要一定计算的，此组件路径：src/components/Home/Select.vue，可自行查看
     - 效果图如下:
     - <img src="http://luckydog314.ltd:8080/pic/select.gif" />
+  
+-  #### 推荐歌单
+
+  - 构建静态页面使用了swiper组件，需要注意的安装时建议安装第6代版本：npm i swiper@6 -S
+
+  - 关键代码：
+
+  - ```javascript
+    onUpdated(() => {
+      new Swiper("#playListSwiper", {
+        slidesPerView: 3,
+        spaceBetween: 10, // 等同于margin-right: 10px
+      })
+    })
+    ```
+
+  - 细节问题：文本溢出处理方式
+
+    - 单行文本溢出-核心css
+
+    - ```css
+      overflow: hidden；
+      white-space: nowrap；
+      text-overflow: ellipsis；
+      ```
+
+    - 多行文本溢出-核心css （兼容性一般： -webkit-line-clamp属性只有webkit内核的浏览器才支持）
+
+    - ```css
+      display: -webkit-box;
+      -webkit-line-clamp: 2;// 行数限制
+      -webkit-box-orient: vertical;
+      // text-overflow: ellipsis;
+      // overflow: hidden;
+      ```
+
+  - 静态页面其他细节问题不再描述，构建好后，为每个swiper-slide绑定点击事件，携带id进行路由跳转，当跳转其他路径时，同时注意公共组件部分头部和顶部通过vif及:style 动态调整。
+
+  - 对应组件路径: src/components/Home/RecommendedPlaylist
+
+  - [点击查看效果图](http://luckydog314.ltd:8080/pic/recommend.gif)
 
 
 

@@ -1,13 +1,24 @@
 <template>
-  <div class="head">
+  <div
+    class="head"
+    v-if="nowRoutePath === '/home' || nowRoutePath === '/boke' || nowRoutePath === '/my' || nowRoutePath === '/follow' || nowRoutePath === '/yuncun'"
+  >
     <HomeHead v-if="nowRoutePath === '/home'" />
     <BokeHead v-else-if="nowRoutePath === '/boke'" />
     <MyHead v-else-if="nowRoutePath === '/my'" />
     <FollowHead v-else-if="nowRoutePath === '/follow'" />
     <YuncunHead v-else-if="nowRoutePath === '/yuncun'" />
   </div>
-  <div class="footer">
-    <div class="top1">top</div>
+  <div
+    class="footer"
+    :style="{
+      bottom:
+        nowRoutePath === '/home' || nowRoutePath === '/boke' || nowRoutePath === '/my' || nowRoutePath === '/follow' || nowRoutePath === '/yuncun'
+          ? 0
+          : '-1.25rem',
+    }"
+  >
+    <div class="top">top</div>
     <div class="bottomNavigation flex-row-spaceBetween">
       <div class="navigationItem flex-col-spaceAround" :class="nowRoutePath === '/home' ? 'navigationActive' : ''" @click="router.push('/home')">
         <div class="iconContainer">
@@ -93,16 +104,17 @@ export default defineComponent({
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
 }
 .footer {
+  box-sizing: border-box;
   width: 7.5rem;
   height: 2.5rem;
   border-top: 1px solid #ccc;
   position: fixed;
-  bottom: 0;
+  // bottom: 0;
   left: 0;
-  .top1 {
+  transition: all 1s;
+  .top {
     height: 50%;
     background-color: #fdfdfd;
   }

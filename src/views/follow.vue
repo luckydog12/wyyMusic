@@ -12,3 +12,12 @@ export default defineComponent({
   setup() {},
 })
 </script>
+
+<style lang="less" scoped>
+.follow {
+  width: 7.5rem;
+  margin-top: 1.2rem;
+  height: calc(100vh - 3.7rem);
+  overflow: scroll;
+}
+</style>

@@ -12,3 +12,15 @@ export const getBanners = (data: getBannersParams) => {
     data,
   })
 }
+
+interface getRecommendedPlayListParams {
+  limit: number
+}
+// 获取推荐歌单
+export const getRecommendedPlayList = (data: getRecommendedPlayListParams) => {
+  return req.request({
+    url: `/personalized?limit=${data.limit}`,
+    method: "get",
+    data,
+  })
+}
